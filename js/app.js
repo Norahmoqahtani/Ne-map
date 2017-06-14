@@ -25,7 +25,7 @@ var locations =[ {
     lng: 46.77263
 }];
 var map;
-var markers;[];
+var markers = [];
 var infowindow;
 
 //initMap
