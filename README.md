@@ -16,4 +16,7 @@ Clone or download the repo and open index.html in the browser
 - infowindow
 
 
-
+### References:
+- http://www.knockmeout.net/2011/04/utility-functions-in-knockoutjs.html
+- UDACITY LESSONS
+- http://knockoutjs.com/documentation/plugins-mapping.html
