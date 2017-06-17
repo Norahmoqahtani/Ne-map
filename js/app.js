@@ -1,5 +1,4 @@
 ﻿//locations
-    "use strict";
 var locations =[ {
     name: "King Salman Safari Park",
     lat: 25.0054,
@@ -30,7 +29,7 @@ var markers =[];
 var infowindow;
 
 //initMap
-function InitMap() {
+function initMap() {
     "use strict";
     
     map = new google.maps.Map(document.getElementById('map'), {
@@ -47,7 +46,7 @@ function InitMap() {
     var self = this;
     self.searchList = ko.observable("");
     self.placeList = ko.observableArray([]);
-   // self.map = initMap;
+    self.map = initMap;
     
     
     
@@ -112,7 +111,7 @@ var markerLocation = function (data) {
 
 //Foursquare API
 
-function foursquare(data) {
+function FoursquareId(data) {
     var venueid = data.foursquareid;
     var foursquareId = 'https://api.foursquare.com/v2/venues/' + venueid + '?oauth_token=1K3HF3KW5HLOLXDC2NJQAZMBSVASUWMF0BTA5KF4WELFFGHE&v=20170603' + this.name;
     var result = data.response.venue;
@@ -127,7 +126,7 @@ function foursquare(data) {
 }
 
 function markersMap() {
-    ko.applyBindings(new InitMap());
+    ko.applyBindings(new initMap());
 }
 
 //Google Error
