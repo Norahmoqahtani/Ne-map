@@ -1,8 +1,4 @@
-﻿var map;
-var markers =[];
-var infowindow;
-var locations = [ 
-{
+﻿var locations =[ {
     name: "King Salman Safari Park",
     lat: 25.0054,
     lng: 46.6020
@@ -26,8 +22,7 @@ var locations = [
     name: "King Abdul Aziz Park",
     lat: 24.62105,
     lng: 46.77263
-}
-];
+}];
 var map;
 var markers =[];
 var infowindow;
