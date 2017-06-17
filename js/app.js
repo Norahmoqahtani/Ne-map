@@ -29,7 +29,7 @@ var markers =[];
 var infowindow;
 
 //initMap
-function initMap() {
+function InitMap() {
     "use strict";
     
     map = new google.maps.Map(document.getElementById('map'), {
@@ -46,7 +46,7 @@ function initMap() {
     var self = this;
     self.searchList = ko.observable("");
     self.placeList = ko.observableArray([]);
-    self.map = initMap;
+    self.map = InitMap;
     
     
     
@@ -126,7 +126,7 @@ function FoursquareId(data) {
 }
 
 function markersMap() {
-    ko.applyBindings(new initMap());
+    ko.applyBindings(new InitMap());
 }
 
 //Google Error
