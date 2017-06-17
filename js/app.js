@@ -1,4 +1,4 @@
-﻿
+﻿//locations
 var locations =[ {
     name: "King Salman Safari Park",
     lat: 25.0054,
@@ -25,7 +25,7 @@ var locations =[ {
     lng: 46.77263
 }];
 var map;
-var markers = [];
+var markers =[];
 var infowindow;
 
 //initMap
@@ -106,9 +106,28 @@ var markerLocation = function (data) {
         }
     }
 };
+
+
+//Foursquare API
+
+function foursquare(data) {
+    var venueid = data.foursquareid;
+    var foursquareId = 'https://api.foursquare.com/v2/venues/' + venueid + '?oauth_token=1K3HF3KW5HLOLXDC2NJQAZMBSVASUWMF0BTA5KF4WELFFGHE&v=20170603' + this.name;
+    var result = data.response.venue;
+
+    $.ajax({
+        url: foursquareId,
+        success: function (info) {
+            infowindow.setContent(info);
+            infowindow.open(map, marker);
+        }
+    });
+}
+
 function markersMap() {
     ko.applyBindings(new initMap());
 }
+
 //Google Error
 function errorMap() {
     'use strict';
