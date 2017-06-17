@@ -24,12 +24,15 @@
     lng: 46.77263
 }];
 var map;
-var markers =[];
+var marker =[];
 var infowindow;
 
 //initMap
 function initMap() {
     "use strict";
+	var self = this;
+    this.searchList = ko.observable("");
+    this.placeList = ko.observableArray([]);
     
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 10,
@@ -38,16 +41,9 @@ function initMap() {
         mapTypeId: 'roadmap'
     });
     
-    
-    infowindow = new google.maps.InfoWindow();
-    
-    
-    var self = this;
-    self.searchList = ko.observable("");
-    self.placeList = ko.observableArray([]);
     self.map = initMap;
     
-    
+    infowindow = new google.maps.InfoWindow();   
     
     // to knockout
     //Source: http://www.knockmeout.net/2011/04/utility-functions-in-knockoutjs.html
@@ -114,7 +110,7 @@ function foursquare(data) {
     var venueid = data.foursquareid;
     var foursquareId = 'https://api.foursquare.com/v2/venues/' + venueid + '?oauth_token=1K3HF3KW5HLOLXDC2NJQAZMBSVASUWMF0BTA5KF4WELFFGHE&v=20170603' + this.name;
     var result = data.response.venue;
-
+    
     $.ajax({
         url: foursquareId,
         success: function (info) {
