@@ -47,7 +47,7 @@ function InitMap() {
     var self = this;
     self.searchList = ko.observable("");
     self.placeList = ko.observableArray([]);
-    self.map = InitMap;
+   // self.map = initMap;
     
     
     
