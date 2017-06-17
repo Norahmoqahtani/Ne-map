@@ -1,4 +1,5 @@
 ﻿//locations
+    "use strict";
 var locations =[ {
     name: "King Salman Safari Park",
     lat: 25.0054,
