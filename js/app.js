@@ -42,6 +42,7 @@ function initMap() {
     
     infowindow = new google.maps.InfoWindow();
     
+    
     var self = this;
     self.searchList = ko.observable("");
     self.placeList = ko.observableArray([]);
@@ -54,7 +55,7 @@ function initMap() {
     locations.forEach(function (position) {
         self.placeList.push(new markerLocation(position));
     });
-    this.locationsArray = ko.computed(function () {
+    self.locationsArray = ko.computed(function () {
         var filteredList = self.searchList().toLowerCase();
         if (filteredList) {
             return ko.utils.arrayFilter(this.placeList(), function (position) {
